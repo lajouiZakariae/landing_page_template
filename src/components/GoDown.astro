@@ -1,0 +1,26 @@
+---
+
+---
+
+<a href="#articles">
+  <i class="fas fa-angle-double-down fa-2x"></i>
+</a>
+
+<style lang="scss">
+  a {
+    color: var(--main-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+
+    &:hover {
+      color: var(--main-color-alt);
+    }
+
+    i {
+      animation: bouncing 1.5s infinite;
+    }
+  }
+</style>
