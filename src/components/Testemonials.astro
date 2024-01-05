@@ -1,0 +1,43 @@
+---
+import MainTitle from './MainTitle.astro';
+import TestemonialCard from './TestemonialCard.astro';
+
+import Avatar1 from '~/assets/imgs/avatars/avatar-01.png';
+import Avatar2 from '~/assets/imgs/avatars/avatar-02.png';
+import Avatar3 from '~/assets/imgs/avatars/avatar-03.png';
+import Avatar4 from '~/assets/imgs/avatars/avatar-04.png';
+import Avatar5 from '~/assets/imgs/avatars/avatar-05.png';
+import Avatar6 from '~/assets/imgs/avatars/avatar-06.png';
+
+const testemonials = [
+  { author: 'Mohamed Farag', stars: 5, img: Avatar1 },
+  { author: 'Mohamed Ibrahim', stars: 4, img: Avatar2 },
+  { author: 'Shady Nabil', start: 3, img: Avatar3 },
+  { author: 'Amr Hendawy', stars: 4, img: Avatar4 },
+  { author: 'Sherief Ashraf', stars: 4, img: Avatar5 },
+  { author: 'Osama Mohamed', stars: 3, img: Avatar6 },
+];
+---
+
+<section id="testimonials">
+  <MainTitle>Testimonials</MainTitle>
+
+  <div class="container">
+    {testemonials.map((testemonial) => <TestemonialCard {...testemonial} />)}
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 40px;
+    }
+  }
+</style>
