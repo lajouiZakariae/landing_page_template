@@ -1,0 +1,117 @@
+---
+import MainTitle from './MainTitle.astro';
+import SkillsImage from '~/assets/imgs/skills.png';
+---
+
+<section id="our-skills">
+  <MainTitle>Our Skills</MainTitle>
+
+  <div class="container">
+    <img src={SkillsImage.src} alt="" />
+    <div class="skills">
+      <div class="skill">
+        <h3>HTML <span>80%</span></h3>
+        <div class="the-progress">
+          <span style="width: 0" data-width="80%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>CSS <span>85%</span></h3>
+        <div class="the-progress">
+          <span style="width: 0" data-width="85%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>JavaScript <span>70%</span></h3>
+        <div class="the-progress">
+          <span style="width: 0" data-width="70%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h3>Python <span>80%</span></h3>
+        <div class="the-progress">
+          <span style="width: 0" data-width="80%"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+
+    img {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .skills {
+      flex: 1;
+    }
+
+    .skill {
+      h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-size: 12px;
+          border: 1px solid #ccc;
+          padding: 3px 5px;
+          border-radius: 4px;
+          color: var(--main-color);
+        }
+      }
+
+      .the-progress {
+        height: 30px;
+        background-color: #eee;
+        position: relative;
+
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: var(--main-color);
+          transition: width 0.5s linear;
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  let progressSpans = document.querySelectorAll('.the-progress span');
+  let section = document.querySelector('#our-skills');
+
+  let nums = document.querySelectorAll('.stats .number');
+  let statsSection = document.querySelector('.stats');
+  let started = false; // Function Started ? No
+
+  window.onscroll = function () {
+    // Skills Animate Width
+    if (window.scrollY >= section.offsetTop - 250) {
+      progressSpans.forEach((span) => {
+        span.style.width = span.dataset.width;
+      });
+    }
+    // Stats Increase Number
+    if (window.scrollY >= statsSection.offsetTop) {
+      if (!started) {
+        nums.forEach((num) => startCount(num));
+      }
+      started = true;
+    }
+  };
+</script>
