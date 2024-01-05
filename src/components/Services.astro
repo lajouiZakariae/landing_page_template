@@ -1,0 +1,127 @@
+---
+import MainTitle from './MainTitle.astro';
+
+const services = [
+  { icon: 'fa-user-shield', name: 'Security' },
+  { icon: 'fa-tools', name: 'Fixing Issues' },
+  { icon: 'fa-map-marked-alt', name: 'Location' },
+  { icon: 'fa-laptop-code', name: 'Coding' },
+  { icon: 'fa-palette', name: 'Marketing' },
+  { icon: 'fa-bullhorn', name: 'Social Media' },
+];
+---
+
+<section id="services">
+  <MainTitle>Services</MainTitle>
+  <div class="container">
+    {
+      services.map(({ name, icon }) => (
+        <div class="box">
+          <i class:list={['fas', icon, 'fa-4x']} />
+          <h3>{name}</h3>
+          <div class="info">
+            <a href="#">Details</a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .box {
+      background-color: white;
+      box-shadow:
+        0 12px 20px 0 rgb(0 0 0 / 13%),
+        0 2px 4px 0 rgb(0 0 0 / 12%);
+      counter-increment: services;
+      transition: var(--main-transition);
+      position: relative;
+
+      &::before {
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        height: 3px;
+        top: -3px;
+        background-color: var(--main-color);
+        position: absolute;
+        width: 0;
+        transition: var(--main-transition);
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      i {
+        margin: 30px auto 20px;
+        display: block;
+        text-align: center;
+        color: #d5d5d5;
+      }
+
+      > h3 {
+        text-align: center;
+        margin: 20px 0 40px;
+        font-size: 25px;
+        color: var(--main-color);
+      }
+
+      .info {
+        padding: 15px;
+        position: relative;
+        background-color: #f9f9f9;
+        text-align: right;
+
+        &::before {
+          content: '0' counter(services);
+          position: absolute;
+          background-color: var(--main-color);
+          color: white;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 80px;
+          font-size: 30px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-right: 15px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: #d5d5d5;
+          top: 0;
+          left: 80px;
+          width: 50px;
+          height: calc(100% + 0.4px);
+          transform: skewX(-30deg);
+        }
+
+        & a {
+          color: var(--main-color);
+        }
+      }
+    }
+  }
+</style>
