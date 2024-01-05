@@ -1,0 +1,78 @@
+---
+import cat1 from '~/assets/imgs/articles/cat-01.jpg';
+import cat2 from '~/assets/imgs/articles/cat-02.jpg';
+import cat3 from '~/assets/imgs/articles/cat-03.jpg';
+import cat4 from '~/assets/imgs/articles/cat-04.jpg';
+import cat5 from '~/assets/imgs/articles/cat-05.jpg';
+import cat6 from '~/assets/imgs/articles/cat-06.jpg';
+import cat7 from '~/assets/imgs/articles/cat-07.jpg';
+import cat8 from '~/assets/imgs/articles/cat-08.jpg';
+import Article from './Article.astro';
+import Spikes from './Spikes.astro';
+import MainTitle from './MainTitle.astro';
+
+const posts = [
+  {
+    title: 'Test Title',
+    img: cat1,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat2,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat3,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat4,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat5,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat6,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat7,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+  {
+    title: 'Test Title',
+    img: cat8,
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit',
+  },
+];
+---
+
+<section id="articles">
+  <MainTitle>articles</MainTitle>
+  <div class="container">
+    {posts.map((post) => <Article {...post} />)}
+  </div>
+  <Spikes />
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 40px;
+    }
+  }
+</style>

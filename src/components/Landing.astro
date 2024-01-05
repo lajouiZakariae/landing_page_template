@@ -1,5 +1,6 @@
 ---
 import GoDown from './GoDown.astro';
+import LandingImage from '~/assets/imgs/landing-image.png';
 ---
 
 <section class="landing">
@@ -9,7 +10,7 @@ import GoDown from './GoDown.astro';
       <p>Here Iam gonna share everything about my life. Books Iam reading, Games Iam Playing, Stories and Events</p>
     </div>
     <div class="image">
-      <img src="imgs/landing-image.png" alt="" />
+      <img src={LandingImage.src} alt="Image" />
     </div>
   </div>
   <GoDown />
