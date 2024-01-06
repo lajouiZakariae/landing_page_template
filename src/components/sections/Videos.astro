@@ -1,0 +1,99 @@
+---
+import VideoImg1 from '~/assets/imgs/videos/video-preview.jpg';
+import MainTitle from '../MainTitle.astro';
+---
+
+<section id="videos">
+  <MainTitle>Top Videos</MainTitle>
+  <div class="container">
+    <div class="holder">
+      <div class="list">
+        <div class="name">
+          Top Videos
+          <i class="fas fa-random"></i>
+        </div>
+        <ul>
+          <li>How To Create Sub Domain<span>05:18</span></li>
+          <li>Playing With The DNS <span>03:18</span></li>
+          <li>Everything About The Virtual Hosts <span>05:25</span></li>
+          <li>How To Monitor Your Website <span>04:16</span></li>
+          <li>Uncharted Beating The Last Boss <span>07:48</span></li>
+          <li>Ys Oath In Felghana Overview <span>03:12</span></li>
+          <li>Ys Series All Games Ending <span>08:10</span></li>
+        </ul>
+      </div>
+      <div class="preview">
+        <img src={VideoImg1.src} alt="" />
+        <div class="info">Everything About The Virtual Hosts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+
+    .holder {
+      display: flex;
+      justify-content: center;
+      background-color: var(--section-background);
+      border: 1px solid #ddd;
+
+      @media (max-width: 991px) {
+        flex-direction: column;
+      }
+
+      .list {
+        min-width: 300px;
+        background-color: white;
+
+        .name {
+          display: flex;
+          justify-content: space-between;
+          padding: 20px;
+          background-color: #f4f4f4;
+          font-weight: bold;
+          /* color: var(--main-color);*/
+        }
+
+        ul li {
+          padding: 20px;
+          border-top: 1px solid var(--section-background);
+          cursor: pointer;
+          transition: var(--main-transition);
+
+          &:hover {
+            background-color: #fafafa;
+            color: var(--main-color);
+          }
+
+          span {
+            display: block;
+            margin-top: 10px;
+            color: #777;
+          }
+        }
+      }
+
+      .preview {
+        background-color: #e2e2e2;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img {
+          max-width: 100%;
+        }
+
+        .info {
+          padding: 20px;
+          background-color: white;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+</style>

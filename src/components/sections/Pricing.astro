@@ -1,0 +1,206 @@
+---
+import MainTitle from '../MainTitle.astro';
+import PricingImg1 from '~/assets/imgs/pricing/hosting-basic.png';
+import PricingImg2 from '~/assets/imgs/pricing/hosting-advanced.png';
+import PricingImg3 from '~/assets/imgs/pricing/hosting-professional.png';
+---
+
+<section id="pricing">
+  <div class="dots dots-up"></div>
+  <div class="dots dots-down"></div>
+  <MainTitle>Pricing Plans</MainTitle>
+  <div class="container">
+    <div class="box">
+      <div class="title">Basic</div>
+      <img src={PricingImg1.src} alt="" />
+      <div class="price">
+        <span class="amount">$15</span>
+        <span class="time">Per Month</span>
+      </div>
+      <ul>
+        <li>10GB HDD Space</li>
+        <li>5 Email Addresses</li>
+        <li>2 Subdomains</li>
+        <li>4 Databases</li>
+        <li>Basic Support</li>
+      </ul>
+      <a href="#">Choose Plan</a>
+    </div>
+    <div class="box popular">
+      <div class="label">Most Popular</div>
+      <div class="title">Advanced</div>
+      <img src={PricingImg2.src} alt="" />
+      <div class="price">
+        <span class="amount">$25</span>
+        <span class="time">Per Month</span>
+      </div>
+      <ul>
+        <li>20GB HDD Space</li>
+        <li>10 Email Addresses</li>
+        <li>5 Subdomains</li>
+        <li>8 Databases</li>
+        <li>Advanced Support</li>
+      </ul>
+      <a href="#">Choose Plan</a>
+    </div>
+    <div class="box">
+      <div class="title">Professional</div>
+      <img src={PricingImg3.src} alt="" />
+      <div class="price">
+        <span class="amount">$45</span>
+        <span class="time">Per Month</span>
+      </div>
+      <ul>
+        <li>50GB HDD Space</li>
+        <li>20 Email Addresses</li>
+        <li>10 Subdomains</li>
+        <li>20 Databases</li>
+        <li>Professional Support</li>
+      </ul>
+      <a href="#">Choose Plan</a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .box {
+      position: relative;
+      box-shadow:
+        0 12px 20px 0 rgb(0 0 0 / 13%),
+        0 2px 4px 0 rgb(0 0 0 / 12%);
+      transition: var(--main-transition);
+      background: white;
+      text-align: center;
+      z-index: 1;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 0;
+        height: 50%;
+        background-color: #f6f6f6;
+        position: absolute;
+        z-index: -1;
+        transition: var(--main-transition);
+      }
+
+      &::before {
+        left: 0;
+        top: 0;
+      }
+
+      &::after {
+        right: 0;
+        bottom: 0;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        width: 100%;
+      }
+
+      .title {
+        font-weight: bold;
+        margin: 30px 0;
+        font-size: 25px;
+        letter-spacing: -1px;
+      }
+
+      img {
+        width: 80px;
+        margin-bottom: 30px;
+      }
+
+      .price {
+        margin-bottom: 20px;
+      }
+
+      .amount {
+        display: block;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: var(--main-color);
+      }
+
+      .time {
+        color: #777;
+      }
+
+      ul {
+        text-align: left;
+
+        li {
+          padding: 20px;
+          border-top: 1px solid #eee;
+
+          &::before {
+            font-family: 'Font Awesome 5 Free';
+            content: '\f00c';
+            margin-right: 10px;
+            font-weight: 900;
+            color: var(--main-color);
+          }
+        }
+      }
+
+      a {
+        display: block;
+        width: fit-content;
+        border: 2px solid var(--main-color);
+        color: var(--main-color);
+        margin: 30px auto 40px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: var(--main-transition);
+
+        &:hover {
+          background-color: var(--main-color-alt);
+          border-color: var(--main-color-alt);
+          color: white;
+        }
+      }
+    }
+
+    .box.popular {
+      @media (min-width: 1200px) {
+        top: -20px;
+      }
+
+      .label {
+        position: absolute;
+        writing-mode: vertical-rl;
+        background-color: var(--main-color);
+        color: white;
+        font-weight: bold;
+        padding: 10px 10px 35px 10px;
+        font-size: 18px;
+        right: 20px;
+        width: 40px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          border-style: solid;
+          border-color: transparent transparent white;
+          border-width: 20px;
+        }
+      }
+    }
+  }
+</style>

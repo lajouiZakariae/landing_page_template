@@ -1,0 +1,131 @@
+---
+import WorkStepImg from '~/assets/imgs/work-steps/work-steps.png';
+import WorkStepImg1 from '~/assets/imgs/work-steps/work-steps-1.png';
+import WorkStepImg2 from '~/assets/imgs/work-steps/work-steps-1.png';
+import WorkStepImg3 from '~/assets/imgs/work-steps/work-steps-3.png';
+
+import MainTitle from './MainTitle.astro';
+---
+
+<section id="work-steps">
+  <MainTitle>How It Works ?</MainTitle>
+  <div class="container">
+    <img src={WorkStepImg.src} alt="" class="image" />
+    <div class="info">
+      <div class="box">
+        <img src={WorkStepImg1.src} alt="" />
+        <div class="text">
+          <h3>Business Analysis</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum
+            recusandae debitis vel
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <img src={WorkStepImg2.src} alt="" />
+        <div class="text">
+          <h3>Architecture</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum
+            recusandae debitis vel
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <img src={WorkStepImg3.src} alt="" />
+        <div class="text">
+          <h3>Developement</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum
+            recusandae debitis vel
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (max-width: 991px) {
+        flex-direction: column;
+      }
+    }
+
+    .image {
+      max-width: 100%;
+      margin-right: 100px;
+
+      @media (max-width: 991px) {
+        margin: 0 0 50px;
+      }
+    }
+
+    .info .box {
+      background-color: #f6f5f5;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      border: 2px solid white;
+      position: relative;
+      z-index: 1;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      &::before {
+        content: '';
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+        background-color: #ededed;
+        z-index: -1;
+        transition: var(--main-transition);
+      }
+
+      &:hover::before {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 64px;
+        margin-right: 30px;
+
+        @media (max-width: 767px) {
+          margin: 0 0 30px;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 22px;
+      }
+
+      p {
+        color: #777;
+        line-height: 1.7;
+        margin: 10px 0 0;
+        font-size: 18px;
+      }
+    }
+  }
+</style>
