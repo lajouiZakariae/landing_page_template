@@ -68,4 +68,10 @@ const { img, title, description } = Astro.props;
       animation: moving-arrow 0.6s linear infinite;
     }
   }
+
+  @keyframes moving-arrow {
+    100% {
+      transform: translateX(10px);
+    }
+  }
 </style>
