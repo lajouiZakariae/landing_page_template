@@ -1,4 +1,4 @@
-<div class="stats" id="stats">
+<section id="stats">
   <h2>Our Awesome Stats</h2>
   <div class="container">
     <div class="box">
@@ -22,4 +22,94 @@
       <span class="text">Money</span>
     </div>
   </div>
-</div>
+</section>
+
+<script></script>
+
+<style lang="scss">
+  section {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-image: url('../imgs/stats.jpg');
+    background-size: cover;
+    min-height: 300px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255 255 255 / 95%);
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 40px;
+      width: fit-content;
+      margin: 0 auto 50px;
+      position: relative;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      background-color: white;
+      padding: 30px 15px;
+      text-align: center;
+      position: relative;
+      opacity: 0.8;
+      transition: var(--main-transition);
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: var(--main-color);
+        transition: 1s;
+        height: 0;
+      }
+
+      &::before {
+        top: 0;
+        right: 0;
+      }
+
+      &::after {
+        left: 0;
+        bottom: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        height: 100%;
+      }
+
+      .number {
+        display: block;
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .text {
+        color: var(--main-color);
+        font-style: italic;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+</style>
