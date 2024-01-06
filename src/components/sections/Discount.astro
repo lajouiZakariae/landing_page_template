@@ -1,3 +1,7 @@
+---
+import DiscountImg from '~/assets/imgs/discount/discount.png';
+---
+
 <section id="discount">
   <div class="image">
     <div class="content">
@@ -7,9 +11,10 @@
         provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel similique laborum dicta
         aperiam odit doloribus corporis.
       </p>
-      <img src="imgs/discount.png" alt="" />
+      <img src={DiscountImg.src} alt="" />
     </div>
   </div>
+
   <div class="form">
     <div class="content">
       <h2>Request A Discount</h2>
@@ -132,10 +137,10 @@
   @keyframes change-background {
     0%,
     100% {
-      background-image: url('../imgs/discount-background1.jpg');
+      background-image: url('/imgs/discount-background1.jpg');
     }
     50% {
-      background-image: url('../imgs/discount-background2.jpg');
+      background-image: url('/imgs/discount-background2.jpg');
     }
   }
 </style>

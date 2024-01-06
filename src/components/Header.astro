@@ -1,10 +1,5 @@
 ---
-const links = [
-  { url: '#articles', text: 'Articles' },
-  { url: '#gallery', text: 'Gallery' },
-  { url: '#features', text: 'Features' },
-  { url: '#about', text: 'About' },
-];
+const { links } = Astro.props;
 ---
 
 <header id="header">
@@ -33,6 +28,7 @@ const links = [
   header {
     background-color: white;
     position: relative;
+    box-shadow: 0 0 10px #ddd;
 
     .container {
       display: flex;
