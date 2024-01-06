@@ -1,3 +1,12 @@
+---
+import GalleryImg1 from '~/assets/imgs/gallery/gallery-01.png';
+import GalleryImg2 from '~/assets/imgs/gallery/gallery-02.png';
+import GalleryImg3 from '~/assets/imgs/gallery/gallery-03.jpg';
+import GalleryImg4 from '~/assets/imgs/gallery/gallery-04.png';
+import GalleryImg5 from '~/assets/imgs/gallery/gallery-05.jpg';
+import GalleryImg6 from '~/assets/imgs/gallery/gallery-06.png';
+---
+
 <div class="footer">
   <div class="container">
     <div class="box">
@@ -50,13 +59,156 @@
       </div>
     </div>
     <div class="box footer-gallery">
-      <img src="imgs/gallery-01.png" alt="" />
-      <img src="imgs/gallery-02.png" alt="" />
-      <img src="imgs/gallery-03.jpg" alt="" />
-      <img src="imgs/gallery-04.png" alt="" />
-      <img src="imgs/gallery-05.jpg" alt="" />
-      <img src="imgs/gallery-06.png" alt="" />
+      <img src={GalleryImg1.src} alt="" />
+      <img src={GalleryImg2.src} alt="" />
+      <img src={GalleryImg3.src} alt="" />
+      <img src={GalleryImg4.src} alt="" />
+      <img src={GalleryImg5.src} alt="" />
+      <img src={GalleryImg6.src} alt="" />
     </div>
   </div>
   <p class="copyright">Made With &lt;3 By Elzero</p>
 </div>
+
+<style lang="scss">
+  .footer {
+    background-color: #191919;
+    padding: 70px 0 0;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .box {
+      h3 {
+        color: white;
+        font-size: 50px;
+        margin: 0 0 20px;
+      }
+
+      .social {
+        display: flex;
+
+        @media (max-width: 767px) {
+          justify-content: center;
+        }
+
+        li {
+          margin-right: 10px;
+
+          a {
+            background-color: #313131;
+            color: #b9b9b9;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            transition: var(--main-transition);
+          }
+        }
+
+        .facebook:hover {
+          background-color: #1877f2;
+        }
+
+        .twitter:hover {
+          background-color: #1da1f2;
+        }
+
+        .youtube:hover {
+          background-color: #ff0000;
+        }
+      }
+
+      .text {
+        line-height: 2;
+        color: #b9b9b9;
+      }
+
+      .links {
+        li {
+          padding: 15px 0;
+          transition: var(--main-transition);
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #444;
+          }
+
+          &:hover {
+            padding-left: 10px;
+          }
+
+          &:hover a {
+            color: white;
+          }
+
+          a {
+            color: #b9b9b9;
+            transition: var(--main-transition);
+
+            &::before {
+              font-family: 'Font Awesome 5 Free';
+              content: '\F101';
+              font-weight: 900;
+              margin-right: 10px;
+              color: var(--main-color);
+            }
+          }
+        }
+      }
+
+      .line {
+        display: flex;
+        align-items: center;
+        color: #b9b9b9;
+        margin-bottom: 30px;
+
+        @media (max-width: 767px) {
+          flex-direction: column;
+        }
+
+        i {
+          font-size: 25px;
+          color: var(--main-color);
+          margin-right: 10px;
+
+          @media (max-width: 767px) {
+            margin-right: 0;
+            margin-bottom: 15px;
+          }
+        }
+
+        .info {
+          line-height: 1.7;
+          flex: 1;
+
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .footer-gallery img {
+      width: 78px;
+      border: 3px solid white;
+      margin: 2px;
+    }
+
+    .copyright {
+      padding: 25px 0;
+      text-align: center;
+      color: white;
+      margin: 50px 0 0;
+      border-top: 1px solid #444;
+    }
+  }
+</style>
