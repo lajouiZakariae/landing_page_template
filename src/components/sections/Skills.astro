@@ -1,7 +1,9 @@
 ---
-import MainTitle from './MainTitle.astro';
+import MainTitle from '../MainTitle.astro';
 import SkillsImage from '~/assets/imgs/skills.png';
 ---
+
+HTMLElement HTMLElement
 
 <section id="our-skills">
   <MainTitle>Our Skills</MainTitle>
@@ -91,7 +93,7 @@ import SkillsImage from '~/assets/imgs/skills.png';
   }
 </style>
 
-<script>
+<script lang="ts">
   let progressSpans = document.querySelectorAll('.the-progress span');
   let section = document.querySelector('#our-skills');
 
@@ -99,21 +101,29 @@ import SkillsImage from '~/assets/imgs/skills.png';
   let statsSection = document.querySelector('.stats');
   let started = false; // Function Started ? No
 
-  if (section && progressSpans) {
-    window.onscroll = function () {
-      // Skills Animate Width
-      if (window.scrollY >= section.offsetTop - 250) {
-        progressSpans.forEach((span) => {
-          span.style.width = span.dataset.width;
-        });
+  window.onscroll = function () {
+    // Skills Animate Width
+    if (window.scrollY >= section?.offsetTop - 250) {
+      progressSpans.forEach((span) => {
+        span.style.width = span.dataset.width;
+      });
+    }
+    // Stats Increase Number
+    if (window.scrollY >= statsSection.offsetTop) {
+      if (!started) {
+        nums.forEach((num) => startCount(num));
       }
-      // Stats Increase Number
-      if (window.scrollY >= statsSection.offsetTop) {
-        if (!started) {
-          nums.forEach((num) => startCount(num));
-        }
-        started = true;
+      started = true;
+    }
+  };
+
+  function startCount(el) {
+    let goal = el.dataset.goal;
+    let count = setInterval(() => {
+      el.textContent++;
+      if (el.textContent == goal) {
+        clearInterval(count);
       }
-    };
+    }, 2000 / goal);
   }
 </script>
