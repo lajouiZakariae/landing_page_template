@@ -55,13 +55,15 @@ const posts = [
 ];
 ---
 
-<section id="articles">
-  <MainTitle>articles</MainTitle>
-  <div class="container">
-    {posts.map((post) => <Article {...post} />)}
-  </div>
+<>
+  <section id="articles">
+    <MainTitle>articles</MainTitle>
+    <div class="container">
+      {posts.map((post) => <Article {...post} />)}
+    </div>
+  </section>
   <Spikes />
-</section>
+</>
 
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
