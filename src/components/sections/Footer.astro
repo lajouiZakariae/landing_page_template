@@ -73,6 +73,36 @@ import GalleryImg6 from '~/assets/imgs/gallery/gallery-06.png';
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) .footer .container .box {
+    .links li a::before {
+      color: getThemeColor('blue');
+    }
+
+    .line i {
+      color: getThemeColor('blue');
+    }
+  }
+
+  :global([data-theme='red']) .footer .container .box {
+    .links li a::before {
+      color: getThemeColor('red');
+    }
+
+    .line i {
+      color: getThemeColor('red');
+    }
+  }
+
+  :global([data-theme='green']) .footer .container .box {
+    .links li a::before {
+      color: getThemeColor('green');
+    }
+
+    .line i {
+      color: getThemeColor('green');
+    }
+  }
+
   .footer {
     background-color: #191919;
     padding: 70px 0 0;
@@ -161,7 +191,6 @@ import GalleryImg6 from '~/assets/imgs/gallery/gallery-06.png';
               content: '\F101';
               font-weight: 900;
               margin-right: 10px;
-              color: $main-color;
             }
           }
         }
@@ -179,7 +208,7 @@ import GalleryImg6 from '~/assets/imgs/gallery/gallery-06.png';
 
         i {
           font-size: 25px;
-          color: $main-color;
+          color: getThemeColor('red');
           margin-right: 10px;
 
           @media (max-width: 767px) {

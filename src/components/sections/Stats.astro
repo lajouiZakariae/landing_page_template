@@ -29,6 +29,38 @@
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) section .box {
+    &::before,
+    &::after {
+      background-color: getThemeColor('blue');
+    }
+
+    .text {
+      color: getThemeColor('blue');
+    }
+  }
+
+  :global([data-theme='red']) section .box {
+    &::before,
+    &::after {
+      background-color: getThemeColor('red');
+    }
+
+    .text {
+      color: getThemeColor('red');
+    }
+  }
+  :global([data-theme='green']) section .box {
+    &::before,
+    &::after {
+      background-color: getThemeColor('green');
+    }
+
+    .text {
+      color: getThemeColor('green');
+    }
+  }
+
   section {
     padding-top: $main-padding-top;
     padding-bottom: $main-padding-bottom;
@@ -74,7 +106,7 @@
         content: '';
         position: absolute;
         width: 2px;
-        background-color: $main-color;
+        background-color: getThemeColor('red');
         transition: 1s;
         height: 0;
       }
@@ -107,7 +139,7 @@
       }
 
       .text {
-        color: $main-color;
+        color: getThemeColor('red');
         font-style: italic;
         font-size: 20px;
         font-weight: bold;

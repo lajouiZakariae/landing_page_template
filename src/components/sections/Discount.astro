@@ -32,6 +32,36 @@ import DiscountImg from '~/assets/imgs/discount/discount.png';
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='red']) section .form {
+    .input {
+      caret-color: getThemeColor('red');
+    }
+
+    [type='submit'] {
+      background-color: getThemeColor('red');
+    }
+  }
+
+  :global([data-theme='blue']) section .form {
+    .input {
+      caret-color: getThemeColor('blue');
+    }
+
+    [type='submit'] {
+      background-color: getThemeColor('blue');
+    }
+  }
+
+  :global([data-theme='green']) section .form {
+    .input {
+      caret-color: getThemeColor('green');
+    }
+
+    [type='submit'] {
+      background-color: getThemeColor('green');
+    }
+  }
+
   section {
     min-height: 100vh;
     display: flex;
@@ -84,7 +114,7 @@ import DiscountImg from '~/assets/imgs/discount/discount.png';
         border: none;
         border-bottom: 1px solid #ccc;
         background-color: #f9f9f9;
-        caret-color: $main-color;
+        caret-color: getThemeColor('red');
 
         &:focus {
           outline: none;
@@ -100,7 +130,7 @@ import DiscountImg from '~/assets/imgs/discount/discount.png';
         display: block;
         width: 100%;
         padding: 15px;
-        background-color: $main-color;
+        background-color: getThemeColor('red');
         color: white;
         font-weight: bold;
         font-size: 20px;

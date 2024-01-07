@@ -33,6 +33,17 @@ import MainTitle from '../MainTitle.astro';
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) section .holder .list ul li:hover {
+    color: getThemeColor('blue');
+  }
+
+  :global([data-theme='red']) section .holder .list ul li:hover {
+    color: getThemeColor('red');
+  }
+  :global([data-theme='green']) section .holder .list ul li:hover {
+    color: getThemeColor('green');
+  }
+
   section {
     padding-top: $main-padding-top;
     padding-bottom: $main-padding-bottom;
@@ -57,7 +68,7 @@ import MainTitle from '../MainTitle.astro';
           padding: 20px;
           background-color: #f4f4f4;
           font-weight: bold;
-          /* color: $main-color;*/
+          /* color: getThemeColor('red');*/
         }
 
         ul li {
@@ -68,7 +79,6 @@ import MainTitle from '../MainTitle.astro';
 
           &:hover {
             background-color: #fafafa;
-            color: $main-color;
           }
 
           span {

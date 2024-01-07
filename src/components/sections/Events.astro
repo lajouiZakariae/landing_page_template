@@ -46,6 +46,74 @@ import EventsImg from '~/assets/imgs/events.png';
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) section {
+    .time .unit {
+      span:first-child {
+        color: getThemeColor('blue');
+      }
+
+      &:hover,
+      &:hover span:last-child {
+        border-color: getThemeColor('blue');
+      }
+    }
+
+    .subscribe form {
+      input[type='email'] {
+        caret-color: getThemeColor('blue');
+      }
+
+      input[type='submit'] {
+        background-color: getThemeColor('blue');
+      }
+    }
+  }
+  :global([data-theme='red']) section {
+    .time .unit {
+      span:first-child {
+        color: getThemeColor('red');
+      }
+
+      &:hover,
+      &:hover span:last-child {
+        border-color: getThemeColor('red');
+      }
+    }
+
+    .subscribe form {
+      input[type='email'] {
+        caret-color: getThemeColor('red');
+      }
+
+      input[type='submit'] {
+        background-color: getThemeColor('red');
+      }
+    }
+  }
+
+  :global([data-theme='green']) section {
+    .time .unit {
+      span:first-child {
+        color: getThemeColor('green');
+      }
+
+      &:hover,
+      &:hover span:last-child {
+        border-color: getThemeColor('green');
+      }
+    }
+
+    .subscribe form {
+      input[type='email'] {
+        caret-color: getThemeColor('green');
+      }
+
+      input[type='submit'] {
+        background-color: getThemeColor('green');
+      }
+    }
+  }
+
   section {
     padding-top: $main-padding-top;
     padding-bottom: $main-padding-bottom;
@@ -90,7 +158,6 @@ import EventsImg from '~/assets/imgs/events.png';
           &:first-child {
             font-size: 35px;
             padding: 15px;
-            color: $main-color;
             font-weight: bold;
           }
 
@@ -99,11 +166,6 @@ import EventsImg from '~/assets/imgs/events.png';
             font-size: 13px;
             border-top: 1px solid #d4d4d4;
           }
-        }
-
-        &:hover,
-        &:hover span:last-child {
-          border-color: $main-color;
         }
       }
     }
@@ -146,7 +208,6 @@ import EventsImg from '~/assets/imgs/events.png';
           border-radius: 50px;
           border: none;
           flex: 1;
-          caret-color: $main-color;
 
           @media (max-width: 767px) {
             border-radius: 0;
@@ -168,7 +229,6 @@ import EventsImg from '~/assets/imgs/events.png';
         input[type='submit'] {
           border-radius: 50px;
           border: none;
-          background-color: $main-color;
           color: white;
           font-weight: bold;
           padding: 20px;

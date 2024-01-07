@@ -17,6 +17,17 @@ const { img, title, description } = Astro.props;
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  @each $theme in $themes {
+    :global([data-theme='#{$theme}']) article .info {
+      a {
+        color: getThemeColor($theme);
+      }
+      i {
+        color: getThemeColor($theme);
+      }
+    }
+  }
+
   article {
     box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
     background-color: white;
@@ -58,11 +69,11 @@ const { img, title, description } = Astro.props;
       align-items: center;
 
       a {
-        color: $main-color;
+        color: getThemeColor('red');
         font-weight: bold;
       }
       i {
-        color: $main-color;
+        color: getThemeColor('red');
       }
     }
 

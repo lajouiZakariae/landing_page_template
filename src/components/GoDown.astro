@@ -9,8 +9,20 @@
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) a {
+    color: getThemeColor('blue');
+  }
+
+  :global([data-theme='green']) a {
+    color: getThemeColor('green');
+  }
+
+  :global([data-theme='red']) a {
+    color: getThemeColor('red');
+  }
+
   a {
-    color: $main-color;
+    color: getThemeColor('red');
     position: absolute;
     bottom: 30px;
     left: 50%;

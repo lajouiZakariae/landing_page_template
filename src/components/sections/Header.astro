@@ -20,6 +20,24 @@ const { links } = Astro.props;
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  @each $theme in $themes {
+    :global([data-theme='#{$theme}']) header {
+      .container .logo {
+        color: getThemeColor($theme);
+      }
+
+      .main-nav > li > a {
+        &:hover {
+          color: getThemeColor($theme);
+        }
+
+        &::before {
+          background-color: getThemeColor($theme);
+        }
+      }
+    }
+  }
+
   header {
     background-color: white;
     position: relative;
@@ -34,7 +52,6 @@ const { links } = Astro.props;
     }
 
     .logo {
-      color: $main_color;
       font-size: 26px;
       font-weight: bold;
       height: 72px;
@@ -64,7 +81,6 @@ const { links } = Astro.props;
         transition: $main_transition;
 
         &:hover {
-          color: $main_color;
           background-color: #fafafa;
         }
 
@@ -79,7 +95,7 @@ const { links } = Astro.props;
           position: absolute;
           width: 100%;
           height: 4px;
-          background-color: $main_color;
+          // background-color: getThemeColor('red');
           top: 0;
           left: -100%;
           transition: $main_transition;

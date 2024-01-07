@@ -65,6 +65,63 @@ import PricingImg3 from '~/assets/imgs/pricing/hosting-professional.png';
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) section .container .box {
+    .amount {
+      color: getThemeColor('blue');
+    }
+
+    ul li::before {
+      color: getThemeColor('blue');
+    }
+
+    a {
+      border: 2px solidgetThemeColor('blue');
+      color: getThemeColor('blue');
+    }
+
+    &.popular .label {
+      background-color: getThemeColor('blue');
+    }
+  }
+
+  :global([data-theme='red']) section .container .box {
+    .amount {
+      color: getThemeColor('red');
+    }
+
+    ul li::before {
+      color: getThemeColor('red');
+    }
+
+    a {
+      border: 2px solidgetThemeColor('red');
+      color: getThemeColor('red');
+    }
+
+    &.popular .label {
+      background-color: getThemeColor('red');
+    }
+  }
+
+  :global([data-theme='green']) section .container .box {
+    .amount {
+      color: getThemeColor('green');
+    }
+
+    ul li::before {
+      color: getThemeColor('green');
+    }
+
+    a {
+      border: 2px solidgetThemeColor('green');
+      color: getThemeColor('green');
+    }
+
+    &.popular .label {
+      background-color: getThemeColor('green');
+    }
+  }
+
   section {
     padding-top: $main-padding-top;
     padding-bottom: $main-padding-bottom;
@@ -134,7 +191,6 @@ import PricingImg3 from '~/assets/imgs/pricing/hosting-professional.png';
         font-size: 60px;
         font-weight: bold;
         margin-bottom: 5px;
-        color: $main-color;
       }
 
       .time {
@@ -153,7 +209,6 @@ import PricingImg3 from '~/assets/imgs/pricing/hosting-professional.png';
             content: '\f00c';
             margin-right: 10px;
             font-weight: 900;
-            color: $main-color;
           }
         }
       }
@@ -161,8 +216,6 @@ import PricingImg3 from '~/assets/imgs/pricing/hosting-professional.png';
       a {
         display: block;
         width: fit-content;
-        border: 2px solid$main-color;
-        color: $main-color;
         margin: 30px auto 40px;
         padding: 15px 20px;
         border-radius: 6px;
@@ -185,7 +238,7 @@ import PricingImg3 from '~/assets/imgs/pricing/hosting-professional.png';
       .label {
         position: absolute;
         writing-mode: vertical-rl;
-        background-color: $main-color;
+        background-color: getThemeColor('red');
         color: white;
         font-weight: bold;
         padding: 10px 10px 35px 10px;

@@ -3,6 +3,33 @@
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) {
+    h2 {
+      &::before,
+      &::after {
+        background-color: getThemeColor('blue');
+      }
+    }
+  }
+
+  :global([data-theme='green']) {
+    h2 {
+      &::before,
+      &::after {
+        background-color: getThemeColor('green');
+      }
+    }
+  }
+
+  :global([data-theme='red']) {
+    h2 {
+      &::before,
+      &::after {
+        background-color: getThemeColor('red');
+      }
+    }
+  }
+
   h2 {
     text-transform: uppercase;
     margin: 0 auto 80px;
@@ -19,7 +46,6 @@
       content: '';
       width: 12px;
       height: 12px;
-      background-color: $main-color;
       position: absolute;
       border-radius: 50%;
       top: 50%;

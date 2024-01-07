@@ -40,6 +40,36 @@ import SkillsImage from '~/assets/imgs/skills.png';
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
 
+  :global([data-theme='blue']) section .skill {
+    h3 span {
+      color: getThemeColor('blue');
+    }
+
+    .the-progress span {
+      background-color: getThemeColor('blue');
+    }
+  }
+
+  :global([data-theme='green']) section .skill {
+    h3 span {
+      color: getThemeColor('green');
+    }
+
+    .the-progress span {
+      background-color: getThemeColor('green');
+    }
+  }
+
+  :global([data-theme='red']) section .skill {
+    h3 span {
+      color: getThemeColor('red');
+    }
+
+    .the-progress span {
+      background-color: getThemeColor('red');
+    }
+  }
+
   section {
     padding-top: $main-padding-top;
     padding-bottom: $main-padding-bottom;
@@ -71,7 +101,6 @@ import SkillsImage from '~/assets/imgs/skills.png';
           border: 1px solid #ccc;
           padding: 3px 5px;
           border-radius: 4px;
-          color: $main-color;
         }
       }
 
@@ -85,7 +114,6 @@ import SkillsImage from '~/assets/imgs/skills.png';
           left: 0;
           top: 0;
           height: 100%;
-          background-color: $main-color;
           transition: width 0.5s linear;
         }
       }

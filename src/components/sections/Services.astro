@@ -13,6 +13,7 @@ const services = [
 
 <section id="services">
   <MainTitle>Services</MainTitle>
+
   <div class="container">
     {
       services.map(({ name, icon }) => (
@@ -30,6 +31,66 @@ const services = [
 
 <style lang="scss">
   @import '~/assets/scss/_vars.scss';
+
+  :global([data-theme='blue']) section .container .box {
+    &::before {
+      background-color: getThemeColor('blue');
+    }
+
+    h3 {
+      color: getThemeColor('blue');
+    }
+
+    .info {
+      &::before {
+        background-color: getThemeColor('blue');
+      }
+
+      a {
+        color: getThemeColor('blue');
+      }
+    }
+  }
+
+  :global([data-theme='red']) section .container .box {
+    &::before {
+      background-color: getThemeColor('red');
+    }
+
+    h3 {
+      color: getThemeColor('red');
+    }
+
+    .info {
+      &::before {
+        background-color: getThemeColor('red');
+      }
+
+      a {
+        color: getThemeColor('red');
+      }
+    }
+  }
+
+  :global([data-theme='green']) section .container .box {
+    &::before {
+      background-color: getThemeColor('green');
+    }
+
+    h3 {
+      color: getThemeColor('green');
+    }
+
+    .info {
+      &::before {
+        background-color: getThemeColor('green');
+      }
+
+      a {
+        color: getThemeColor('green');
+      }
+    }
+  }
 
   section {
     padding-top: $main-padding-top;
@@ -58,7 +119,6 @@ const services = [
         transform: translateX(-50%);
         height: 3px;
         top: -3px;
-        background-color: $main-color;
         position: absolute;
         width: 0;
         transition: $main-transition;
@@ -83,7 +143,7 @@ const services = [
         text-align: center;
         margin: 20px 0 40px;
         font-size: 25px;
-        color: $main-color;
+        color: getThemeColor('red');
       }
 
       .info {
@@ -95,12 +155,12 @@ const services = [
         &::before {
           content: '0' counter(services);
           position: absolute;
-          background-color: $main-color;
+          background-color: getThemeColor('red');
           color: white;
           left: 0;
           top: 0;
           height: 100%;
-          width: 80px;
+          width: 95px;
           font-size: 30px;
           font-weight: bold;
           display: flex;
@@ -118,10 +178,6 @@ const services = [
           width: 50px;
           height: calc(100% + 0.4px);
           transform: skewX(-30deg);
-        }
-
-        & a {
-          color: $main-color;
         }
       }
     }
