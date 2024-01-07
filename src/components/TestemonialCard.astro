@@ -7,7 +7,7 @@ const { author, stars, img } = Astro.props;
   <h3>{author}</h3>
   <span class="title">Full Stack Developer</span>
   <div class="rate">
-    {[...Array(5).keys()].map((index) => <i class:list={['fas fa-star', { filled: index <= stars }]} />)}
+    {[...Array(5).keys()].map((index) => <i class:list={['fas fa-star', { filled: index + 1 <= stars }]} />)}
   </div>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat
@@ -16,6 +16,8 @@ const { author, stars, img } = Astro.props;
 </article>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   article {
     padding: 20px;
     background-color: white;
@@ -30,7 +32,7 @@ const { author, stars, img } = Astro.props;
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 10px solid var(--section-background);
+      border: 10px solid $section-background;
     }
 
     h3 {
@@ -43,8 +45,10 @@ const { author, stars, img } = Astro.props;
       display: block;
     }
 
-    .rate .filled {
-      color: #ffc107;
+    .rate {
+      .filled {
+        color: #ffc107;
+      }
     }
 
     p {

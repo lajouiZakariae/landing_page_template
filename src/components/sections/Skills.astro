@@ -3,8 +3,6 @@ import MainTitle from '../MainTitle.astro';
 import SkillsImage from '~/assets/imgs/skills.png';
 ---
 
-HTMLElement HTMLElement
-
 <section id="our-skills">
   <MainTitle>Our Skills</MainTitle>
 
@@ -40,9 +38,11 @@ HTMLElement HTMLElement
 </section>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   section {
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
+    padding-top: $main-padding-top;
+    padding-bottom: $main-padding-bottom;
     position: relative;
 
     img {
@@ -71,7 +71,7 @@ HTMLElement HTMLElement
           border: 1px solid #ccc;
           padding: 3px 5px;
           border-radius: 4px;
-          color: var(--main-color);
+          color: $main-color;
         }
       }
 
@@ -85,7 +85,7 @@ HTMLElement HTMLElement
           left: 0;
           top: 0;
           height: 100%;
-          background-color: var(--main-color);
+          background-color: $main-color;
           transition: width 0.5s linear;
         }
       }

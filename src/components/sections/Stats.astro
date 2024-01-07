@@ -27,9 +27,11 @@
 <script></script>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   section {
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
+    padding-top: $main-padding-top;
+    padding-bottom: $main-padding-bottom;
     position: relative;
     background-image: url('../imgs/stats.jpg');
     background-size: cover;
@@ -65,14 +67,14 @@
       text-align: center;
       position: relative;
       opacity: 0.8;
-      transition: var(--main-transition);
+      transition: $main-transition;
 
       &::before,
       &::after {
         content: '';
         position: absolute;
         width: 2px;
-        background-color: var(--main-color);
+        background-color: $main-color;
         transition: 1s;
         height: 0;
       }
@@ -105,7 +107,7 @@
       }
 
       .text {
-        color: var(--main-color);
+        color: $main-color;
         font-style: italic;
         font-size: 20px;
         font-weight: bold;

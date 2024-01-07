@@ -31,10 +31,12 @@ import FeatureImg3 from '~/assets/imgs/features/features-03.jpg';
   </div>
 </section>
 
-<style>
+<style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   section {
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
+    padding-top: $main-padding-top;
+    padding-bottom: $main-padding-bottom;
     position: relative;
     background-color: white;
 
@@ -73,7 +75,7 @@ import FeatureImg3 from '~/assets/imgs/features/features-03.jpg';
           border-style: solid;
           border-width: 0px 0px 170px 500px;
           border-color: transparent transparent white transparent;
-          transition: var(--main-transition);
+          transition: $main-transition;
         }
       }
 
@@ -119,7 +121,7 @@ import FeatureImg3 from '~/assets/imgs/features/features-03.jpg';
         font-size: 22px;
         padding: 10px 30px;
         border-radius: 6px;
-        transition: var(--main-transition);
+        transition: $main-transition;
       }
     }
 

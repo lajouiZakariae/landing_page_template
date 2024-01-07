@@ -26,11 +26,13 @@ const images = [GalleryImg1, GalleryImg2, GalleryImg3, GalleryImg4, GalleryImg5,
 </section>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   section {
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
+    padding-top: $main-padding-top;
+    padding-bottom: $main-padding-bottom;
     position: relative;
-    background-color: var(--section-background);
+    background-color: $section-background;
 
     .container {
       display: grid;
@@ -69,7 +71,7 @@ const images = [GalleryImg1, GalleryImg2, GalleryImg3, GalleryImg4, GalleryImg5,
 
       img {
         max-width: 100%;
-        transition: var(--main-transition);
+        transition: $main-transition;
       }
 
       .image:hover img {

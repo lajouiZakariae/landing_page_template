@@ -30,6 +30,8 @@ import DiscountImg from '~/assets/imgs/discount/discount.png';
 </section>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   section {
     min-height: 100vh;
     display: flex;
@@ -82,7 +84,7 @@ import DiscountImg from '~/assets/imgs/discount/discount.png';
         border: none;
         border-bottom: 1px solid #ccc;
         background-color: #f9f9f9;
-        caret-color: var(--main-color);
+        caret-color: $main-color;
 
         &:focus {
           outline: none;
@@ -98,16 +100,16 @@ import DiscountImg from '~/assets/imgs/discount/discount.png';
         display: block;
         width: 100%;
         padding: 15px;
-        background-color: var(--main-color);
+        background-color: $main-color;
         color: white;
         font-weight: bold;
         font-size: 20px;
         border: none;
         cursor: pointer;
-        transition: var(--main-transition);
+        transition: $main-transition;
 
         &:hover {
-          background-color: var(--main-color-alt);
+          background-color: $main-color-alt;
         }
       }
     }

@@ -1,6 +1,8 @@
 <h2><slot /></h2>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   h2 {
     text-transform: uppercase;
     margin: 0 auto 80px;
@@ -10,14 +12,14 @@
     width: fit-content;
     position: relative;
     z-index: 1;
-    transition: var(--main-transition);
+    transition: $main-transition;
 
     &::before,
     &::after {
       content: '';
       width: 12px;
       height: 12px;
-      background-color: var(--main-color);
+      background-color: $main-color;
       position: absolute;
       border-radius: 50%;
       top: 50%;
@@ -72,7 +74,7 @@
     100% {
       right: 0;
       border-radius: 0;
-      width: 50%;
+      width: 51%;
       height: 100%;
     }
   }

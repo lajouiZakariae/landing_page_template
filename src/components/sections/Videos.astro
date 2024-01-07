@@ -31,14 +31,16 @@ import MainTitle from '../MainTitle.astro';
 </section>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   section {
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
+    padding-top: $main-padding-top;
+    padding-bottom: $main-padding-bottom;
 
     .holder {
       display: flex;
       justify-content: center;
-      background-color: var(--section-background);
+      background-color: $section-background;
       border: 1px solid #ddd;
 
       @media (max-width: 991px) {
@@ -55,18 +57,18 @@ import MainTitle from '../MainTitle.astro';
           padding: 20px;
           background-color: #f4f4f4;
           font-weight: bold;
-          /* color: var(--main-color);*/
+          /* color: $main-color;*/
         }
 
         ul li {
           padding: 20px;
-          border-top: 1px solid var(--section-background);
+          border-top: 1px solid $section-background;
           cursor: pointer;
-          transition: var(--main-transition);
+          transition: $main-transition;
 
           &:hover {
             background-color: #fafafa;
-            color: var(--main-color);
+            color: $main-color;
           }
 
           span {

@@ -15,14 +15,16 @@ const { img, title, description } = Astro.props;
 </article>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   article {
     box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
     transition:
-      transform var(--main-transition),
-      box-shadow var(--main-transition);
+      transform $main-transition,
+      box-shadow $main-transition;
 
     &:hover {
       transform: translateY(-10px);
@@ -56,11 +58,11 @@ const { img, title, description } = Astro.props;
       align-items: center;
 
       a {
-        color: var(--main-color);
+        color: $main-color;
         font-weight: bold;
       }
       i {
-        color: var(--main-color);
+        color: $main-color;
       }
     }
 

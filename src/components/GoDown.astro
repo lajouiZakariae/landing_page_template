@@ -7,16 +7,18 @@
 </a>
 
 <style lang="scss">
+  @import '~/assets/scss/_vars.scss';
+
   a {
-    color: var(--main-color);
+    color: $main-color;
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    transition: var(--main-transition);
+    transition: $main-transition;
 
     &:hover {
-      color: var(--main-color-alt);
+      color: $main-color-alt;
     }
 
     i {
